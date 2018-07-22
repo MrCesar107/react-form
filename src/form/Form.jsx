@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import FormRow from './FormRow';
+import './form.css';
 
 //this.refs.nombreComponente.nombreMetodo       Acceder a las referencias de un componente en especifico
 
@@ -35,16 +36,16 @@ class Form extends Component {
 
   render() {
     return(
-      <div>
-        <h2>Registro</h2>
-        <form onSubmit={this.onSubmit}>
+      <div className="form">
+        <form onSubmit={this.onSubmit} className="form-form">
+          <h2 className="form-title">Registro</h2>
           <FormRow inputType="text" isRequired={true} labelText="Nombre" ref="nombre"/>
           <FormRow inputType="text" isRequired={true} labelText="Apellido" ref="apellido"/>
           <FormRow inputType="email" isRequired={true} labelText="E-mail" ref="email"/>
           <FormRow inputType="password" isRequired={true} labelText="Contraseña" ref="password"/>
           <FormRow inputType="password" isRequired={true} labelText="Confirmar contraseña" ref="password2"/>
-          <button>Registro</button>
-          <label>{ this.state.labelLegend }</label>
+          <button className="form-button">Registro</button>
+          <label className="form-label-legend">{ this.state.labelLegend }</label>
         </form>
       </div>
     );
