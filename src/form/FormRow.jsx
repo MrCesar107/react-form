@@ -25,7 +25,8 @@ class FormRow extends Component {
     return(
       <div>
         <label>{ this.props.labelText }</label>
-        <input type={ this.props.inputType } placeholder={ this.props.labelText } value={this.state.inputValue} onChange={this.onChange}/>
+        <input type={ this.props.inputType } placeholder={ this.props.labelText } value={this.state.inputValue} onChange={this.onChange}
+          required={this.props.isRequired}/>
       </div>
     );
   }
@@ -34,7 +35,8 @@ class FormRow extends Component {
 
 FormRow.propTypes = {
   inputType: PropTypes.string,
-  labelText: PropTypes.string
+  labelText: PropTypes.string,
+  isRequired: PropTypes.bool
 }
 
 export default FormRow;
